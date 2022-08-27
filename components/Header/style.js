@@ -25,6 +25,7 @@ export const NavLinks = styled.nav`
   display: flex;
   gap: 20px;
   @media (max-width: 560px) {
+    z-index: 1;/*evita que a barra de menu fique por baixo da imagem*/
     flex-direction: column;
     background-color: #161616;
     position: fixed;

@@ -67,23 +67,50 @@ export const LinkProjects = styled.button`
 `;
 
 export const Logo = styled.div`
-  width: 50%;
-  display: flex;
+  width: 31%;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1/1;/**/
+    border-radius: 2rem;
+    background: linear-gradient(to right, #205E9B, #0575E6, #021B79);
+    display: grid;
+    place-items: center;/**/
   img {
-    width: 25rem;
-    height: 25rem;
+    width: 20rem;
+    height: 20rem;
   }
-  @media (max-width: 760px) {
-    width: 90%;
-  }
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {/*novo media query*/
+    width: 35%;
     img {
       width: 18rem;
       height: 18rem;
     }
   }
+  @media (max-width: 760px) {
+    width: 50%;
+  }
+  @media (max-width: 600px) {
+    img {
+      width: 12rem;
+      height: 12rem;
+    }
+  }
+ 
 `;
 
-export const Img = styled.img``
+export const Img = styled.img`
+  width: 50%;
+  border-radius: 2rem; /*modificado*/
+  justify-self: center;
+  align-self: center;
+  overflow: hidden;
+  transform: rotate(-12deg);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: .6s ease-out;
+  filter: drop-shadow(12px 12px 10px rgba(0,0,0,.6));/*modificado*/
+  &:hover {/*assim*/
+    transform: rotate(0);
+    filter: none;
+  }/*que usa o hover*/
+`
