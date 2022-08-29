@@ -51,9 +51,8 @@ export const Li = styled.li`
 export const TitleProject = styled.strong``;
 
 export const Url = styled.span`
-a:link { color: red;
-  text-decoration: none;
-  color: red; 
+a:link { color: inherit;
+  text-decoration: none; 
   }
 a:visited
    { color:inherit; }
