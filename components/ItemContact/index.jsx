@@ -8,7 +8,7 @@ export default function ItemContact({ IconFa, LinkContact }) {
         <IconFa />
       </Icon>
       <Text>
-        {LinkContact}
+      <a href={LinkContact}>{LinkContact}</a>
       </Text>
     </Item>
   )
