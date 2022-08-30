@@ -52,7 +52,7 @@ export const TitleProject = styled.strong``;
 
 export const Url = styled.span`
 a:link { color: inherit;
-  text-decoration: none; 
+  text-decoration: none;
   }
 a:visited
    { color:inherit; }
@@ -60,3 +60,7 @@ a:visited
 `;
 
 export const Created_at = styled.span``;
+
+export const Updated_at = styled.span``;
+
+export const Language = styled.span``;
