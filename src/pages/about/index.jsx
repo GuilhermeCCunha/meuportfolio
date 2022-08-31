@@ -1,12 +1,23 @@
-import { FaArrowRight } from 'react-icons/fa'
-import { Container, Content, Infos, Name, Function, Intro, LinkProjects, Logo, Img } from '../../../styles/indexStyle'
-import Link from 'next/link'
+import { Container, Title, Content, Infos, Intro, Img, Nextlogo } from '../../../styles/aboutStyle'
 
 export default function About() {
-  return ( 
-    <div>
-        <h1>Sobre o site</h1>
-        <h2>Vou escrever detalhes sobre este site aqui </h2>
-    </div>
-   )
+  return (
+    <Container>
+      <Content>
+        <Infos>
+          <Title>Sobre o site</Title>
+          <br />
+          <Intro> Este site é uma Single-page application e foi criado usando o framework Next.js, a seção Projetos são os repositórios que estão no meu GitHub,
+            eles são obtidos dinamicamente consumindo dados da API do GitHub. O site também é responsivo
+            sendo compatível com a maioria dos dispositivos móveis.
+          </Intro>
+          <Nextlogo>
+            <Img src="/images/nextjslogo.png" alt="logo" />
+          </Nextlogo>
+        </Infos>
+      </Content>
+    </Container>
+
+
+  )
 }

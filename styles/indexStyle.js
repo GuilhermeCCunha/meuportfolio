@@ -95,6 +95,15 @@ export const Logo = styled.div`
       height: 12rem;
     }
   }
+  @media (max-height: 500px) {
+    img {
+      width: 0rem;
+      height: 0rem;
+    }
+    width: 0%;
+    height: 0%;
+    }
+  }
  
 `;
 
