@@ -39,6 +39,9 @@ export default function Header() {
           <Link href="contact">
             <Ancora className={activeLink('contact')} onClick={showSiderbar}>Contato</Ancora>
           </Link>
+          <Link href="about">
+            <Ancora className={activeLink('about')} onClick={showSiderbar}>Sobre</Ancora>
+          </Link>
         </NavLinks>
       </Content>
     </Container>

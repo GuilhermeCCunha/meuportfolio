@@ -37,7 +37,7 @@ export const NavLinks = styled.nav`
     right: ${props => props.sidebar ? '0' : '-100%'};
     transition: 0.5s;
     a {
-      margin-top: 100px;
+      margin-top: 60px; /*assim a barra de menu fica melhor em telas menores*/
       display: flex;
       align-items: center;
       justify-content: space-around;
