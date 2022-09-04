@@ -48,7 +48,16 @@ export const Li = styled.li`
   }
 `;
 
-export const TitleProject = styled.strong``;
+export const TitleProject = styled.strong`
+color: #000;
+-webkit-text-stroke: 0.35px #FFF;
+ text-stroke: 0.35px #FFF;
+background-image:
+  linear-gradient(90deg, #205E9B, #0575E6, #021B79);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 175%
+`;
 
 export const Url = styled.span`
 a:link { color: inherit;

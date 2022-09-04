@@ -97,11 +97,9 @@ export const Logo = styled.div`
   }
   @media (max-height: 500px) {
     img {
-      width: 0rem;
-      height: 0rem;
+      display: none;
     }
-    width: 0%;
-    height: 0%;
+    display: none;
     }
   }
  
@@ -122,4 +120,4 @@ export const Img = styled.img`
     transform: rotate(0);
     filter: none;
   }/*que usa o hover*/
-`
+`;
