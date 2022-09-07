@@ -42,7 +42,7 @@ export const Li = styled.li`
   box-shadow: 1px 1px 1px 2px gray;
   gap: 5px;
   border-radius: 10px;
-  padding: 10px;
+  padding: 18px; /*10px*/
   @media (max-width: 760px) {
    font-size: 13px;
   }
@@ -73,3 +73,7 @@ export const Created_at = styled.span``;
 export const Updated_at = styled.span``;
 
 export const Language = styled.span``;
+
+export const Description = styled.span``;
+
+export const Stargazers_count = styled.span``;
