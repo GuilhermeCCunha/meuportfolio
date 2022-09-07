@@ -36,14 +36,16 @@ export default function Projects() {
               {item.description !== null &&
                 <Description>Descrição:   {item.description} </Description>
               }
-              <Url>URL: <a href={item.html_url}>{item.html_url}</a></Url> 
+              <Url>URL: <a href={item.html_url}>{item.html_url}</a></Url>
               <Created_at>Data de Criação: {Intl.DateTimeFormat('pt-BR')
                 .format(new Date(item.created_at))}
               </Created_at>
               <Updated_at>Atualizado em: {Intl.DateTimeFormat('pt-BR')
                 .format(new Date(item.updated_at))}
               </Updated_at>
-              <Language>Linguagem: {item.language}</Language>
+              {item.language !== null &&
+                <Language>Linguagem: {item.language}</Language>
+              }
               {item.stargazers_count > 0 &&
                 <Stargazers_count>  <FaRegStar /> {item.stargazers_count}</Stargazers_count>
               }
