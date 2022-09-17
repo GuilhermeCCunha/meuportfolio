@@ -6,7 +6,8 @@ background: linear-gradient(to right, #205E9B, #0575E6, #021B79);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid ${({ theme }) => theme.text};
+  color: white;
 `;
 
 export const Content = styled.div`
@@ -25,7 +26,7 @@ export const NavLinks = styled.nav`
   display: flex;
   gap: 20px;
   @media (max-width: 560px) {
-    z-index: 1;/*evita que a barra de menu fique por baixo da imagem*/
+    z-index: 2;/*evita que a barra de menu fique por baixo da imagem*/
     flex-direction: column;
     background-color: #161616;
     position: fixed;

@@ -4,7 +4,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(95vh - 95px);
+  height: calc(95vh - 95px);                    
+  @media (max-height: 500px) { /* evita que o texto invada o cabeçalho*/
+    height: auto;
+  }
 `;
 
 export const Content = styled.div`
@@ -40,7 +43,7 @@ export const Infos = styled.div`
 `;
 
 export const Intro = styled.span`
-  color: lightgray;
+  color: ${({ theme }) => theme.text2};
   text-align: justify;
   @media (max-width: 760px) {
     font-size: 15px;

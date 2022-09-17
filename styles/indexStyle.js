@@ -5,6 +5,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: calc(100vh - 100px);
+  @media (max-height: 340px) { /* evita que o texto invada o cabeçalho*/
+    height: auto;
+  }
 `;
 
 export const Content = styled.div`
@@ -42,12 +45,12 @@ export const Name = styled.span`
 `;
 
 export const Function = styled.span`
-  color: lightgray;
+  color: ${({ theme }) => theme.text2};
   margin-bottom: 10px;
 `;
 
 export const Intro = styled.span`
-  color: lightgray;
+  color: ${({ theme }) => theme.text2};
   text-align: justify;
   @media (max-width: 760px) {
     font-size: 15px;

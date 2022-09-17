@@ -23,6 +23,6 @@ export const Icon = styled.div`
 `;
 
 export const Text = styled.div`
-  color: white;
+  color: inherit; /*Ajuda na mudança de tema */
   text-align: start;
 `;
