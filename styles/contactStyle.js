@@ -26,6 +26,7 @@ text-decoration: none;
 a:visited
  { color:inherit; }
 &:hover { transform: scale(1.020); }
+transition: 0.25s;
 `;
 
 export const Email = styled.span`
