@@ -2,9 +2,10 @@ import { createGlobalStyle } from 'styled-components'
 
 export default  createGlobalStyle`
     * {
-       /* box-sizing: border-box;
         margin: 0;
-        outline: 0;*/
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
         -webkit-transition: 0.25s;
         transition: 0.25s;
         -moz-transition: 4.25s; 
@@ -19,8 +20,14 @@ export default  createGlobalStyle`
     body {
         /*overflow-y: hidden;*/
         background: ${(props) => props.theme.background};
-        color: ${props => props.theme.text};        
+        color: ${props => props.theme.text};
+        text-align: -webkit-center;        
     }
+
+    a, button {
+        cursor: pointer;
+      }      
+
     h1 {
         color: ${props => props.theme.titles};        
     }
