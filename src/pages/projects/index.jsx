@@ -36,7 +36,7 @@ export default function Projects() {
               {item.description !== null &&
                 <Description>Descrição:   {item.description} </Description>
               }
-              <Url>URL: <a href={item.html_url}>{item.html_url}</a></Url>
+              <Url>URL: <a href={item.html_url} target='_blank' rel="noreferrer" >{item.html_url}</a></Url>
               <Created_at>Data de Criação: {Intl.DateTimeFormat('pt-BR')
                 .format(new Date(item.created_at))}
               </Created_at>
