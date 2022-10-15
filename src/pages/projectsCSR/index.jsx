@@ -1,21 +1,35 @@
+import React, { useEffect, useState } from 'react'
 import { Container, Content, Ul, Li, TitleProject, Url, Created_at, Updated_at, Language, Description, Stargazers_count } from '../../../styles/projectsStyle'
 import { FaRegStar } from 'react-icons/fa'
 
-export async function getServerSideProps () { // SSR
-  const itemsApi = await fetch('https://api.github.com/users/GuilhermeCCunha/repos').then(res => res.json());
-   return {
-     props: { itemsApi }
-   }
+export default function ProjectsCSR() {
+  const [itemsApi, setItemsApi] = useState([])
 
-} // Para acessar a página de projetos com os repositórios renderizados da forma padrão, substitua /projects por /projectsCSR na barra de endereço
+  useEffect(() => {
+    let abortController = new AbortController();
 
-export default function Projects(props) {
- 
+    function getGitHubAPI() {
+      fetch('https://api.github.com/users/GuilhermeCCunha/repos') 
+        .then(async res => {
+          if (!res.ok) {
+            throw new Error(res.status)
+          }
+          var data = await res.json()
+          setItemsApi(data)
+        })
+        .catch(e => console.log(e))
+    }
+
+    getGitHubAPI()
+
+    return () => abortController.abort();
+  }, [])
+
   return (
     <Container>
       <Content>
         <Ul>
-          {props.itemsApi.map(item => (
+          {itemsApi.map(item => (
             <Li key={item.id}>
               <TitleProject>{item.name.toUpperCase()}</TitleProject>
 
