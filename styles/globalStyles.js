@@ -6,9 +6,9 @@ export default  createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
-        -webkit-transition: 0.25s;
-        transition: 0.25s;
-        -moz-transition: 4.25s; 
+        //-webkit-transition: 0.25s;
+        //transition: 0.25s;
+        //-moz-transition: 4.25s; 
          /* efeito bonito de transição não apagar  0.25s parece bom*/
     } 
     .container {

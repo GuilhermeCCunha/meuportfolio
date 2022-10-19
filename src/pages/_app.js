@@ -11,10 +11,30 @@ import { HiMoon } from "react-icons/hi";
 
 
 function MyApp({ Component, pageProps }) {
-  const [isDarkTheme, setIsDarkTheme] = useState(true)
+
+  const [isDarkTheme, setIsDarkTheme] = useState(null)
+  const [isbuttonOn, setIsbuttonOn] = useState()
+
+
+
+  const armazenar = (chave, valor) => {
+    localStorage.setItem(chave, valor)
+  }
+
+  React.useEffect(() => {
+
+    var local = JSON.parse(localStorage.getItem('ls_theme'))
+    setIsDarkTheme(local)
+    if (local === null) {
+      setIsDarkTheme(false)
+    }
+  }, [])
+
+  if (isDarkTheme === null) return null
 
   return (
     <>
+
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Head>
@@ -23,17 +43,26 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <div className="container">
           <button className="accent"
-            onClick={() => setIsDarkTheme(!isDarkTheme)}>
+            onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_theme', !isDarkTheme); }}>
             {isDarkTheme ? <CgSun size={25} /> : <HiMoon size={25} />}
           </button>
         </div >
+        {isbuttonOn ?
+          <style jsx global>{`
+            * {
+                -webkit-transition: 0.25s;
+                transition: 0.25s;
+                -moz-transition: 4.25s;  
+              }
+          `}</style> : <style jsx global>{`
+          * {
+          }    
+        `  }</style>}
         <Component {...pageProps} />
       </ThemeProvider>
-
 
     </>
   )
 }
 
 export default MyApp
-
