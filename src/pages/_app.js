@@ -22,8 +22,12 @@ function MyApp({ Component, pageProps }) {
   }
 
   React.useEffect(() => {
-
-    var local = JSON.parse(localStorage.getItem('ls_theme'))
+    try {
+      var local = JSON.parse(localStorage.getItem('ls_dark_theme'))
+    }
+    catch (e) {
+      local = false
+    }
     setIsDarkTheme(local)
     if (local === null) {
       setIsDarkTheme(false)
@@ -43,7 +47,7 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <div className="container">
           <button className="accent"
-            onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_theme', !isDarkTheme); }}>
+            onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_dark_theme', !isDarkTheme); }}>
             {isDarkTheme ? <CgSun size={25} /> : <HiMoon size={25} />}
           </button>
         </div >
