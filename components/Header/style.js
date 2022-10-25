@@ -37,6 +37,16 @@ export const NavLinks = styled.nav`
     width: 60%;
     right: ${props => props.sidebar ? '0' : '-100%'};
     transition: 0.5s;
+    overflow-x: auto;                          
+    &::-webkit-scrollbar {
+      width: 12px;
+      border-radius: 10px;
+      background-color: whitesmoke; 
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: darkgray; 
+    } 
     a {
       margin-top: 60px; /*assim a barra de menu fica melhor em telas menores*/
       display: flex;
