@@ -16,8 +16,12 @@ export default function Projects(props) {
   const [topRepositories, setTopRepositories] = useState(null);
 
   useEffect(() => {
-    const getTopRepositories = props.itemsApi.sort((first, second) =>
-      first.stargazers_count < second.stargazers_count ? 1 : -1
+    const getTopRepositories = props.itemsApi.sort((first, second) => {
+      if (first.stargazers_count < second.stargazers_count) return 1
+      if (first.stargazers_count > second.stargazers_count) return -1
+      if (first.name.toUpperCase() < second.name.toUpperCase()) return - 1
+      if (first.name.toUpperCase() > second.name.toUpperCase()) return 1
+    }
     );
     setTopRepositories(getTopRepositories);
   }, [props.itemsApi]);
