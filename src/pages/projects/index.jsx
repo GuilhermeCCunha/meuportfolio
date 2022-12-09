@@ -1,21 +1,34 @@
 import { Container, Content, Ul, Li, TitleProject, Url, Created_at, Updated_at, Language, Description, Stargazers_count } from '../../../styles/projectsStyle'
 import { FaRegStar } from 'react-icons/fa'
+import React, { useEffect, useState } from "react";
 
-export async function getServerSideProps () { // SSR
+
+export async function getServerSideProps() { // SSR
   const itemsApi = await fetch('https://api.github.com/users/GuilhermeCCunha/repos').then(res => res.json());
-   return {
-     props: { itemsApi }
-   }
+  return {
+    props: { itemsApi }
+  }
 
 } // Para acessar a página de projetos com os repositórios renderizados da forma padrão, substitua /projects por /projectsCSR na barra de endereço
 
 export default function Projects(props) {
- 
+
+  const [topRepositories, setTopRepositories] = useState(null);
+
+  useEffect(() => {
+    const getTopRepositories = props.itemsApi.sort((first, second) =>
+      first.stargazers_count < second.stargazers_count ? 1 : -1
+    );
+    setTopRepositories(getTopRepositories);
+  }, [props.itemsApi]);
+
+  if (topRepositories === null) return null;
+
   return (
     <Container>
       <Content>
         <Ul>
-          {props.itemsApi.map(item => (
+          {topRepositories.map(item => (
             <Li key={item.id}>
               <TitleProject>{item.name.toUpperCase()}</TitleProject>
 

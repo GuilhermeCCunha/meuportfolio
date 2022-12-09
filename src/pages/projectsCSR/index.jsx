@@ -9,7 +9,7 @@ export default function ProjectsCSR() {
     let abortController = new AbortController();
 
     function getGitHubAPI() {
-      fetch('https://api.github.com/users/GuilhermeCCunha/repos') 
+      fetch('https://api.github.com/users/GuilhermeCCunha/repos')
         .then(async res => {
           if (!res.ok) {
             throw new Error(res.status)
@@ -25,11 +25,30 @@ export default function ProjectsCSR() {
     return () => abortController.abort();
   }, [])
 
+  const [topRepositories, setTopRepositories] = useState(null);
+
+  useEffect(() => {
+    const getTopRepositories = itemsApi.sort((first, second) => {
+      if (first.stargazers_count < second.stargazers_count) return 1
+      if (first.stargazers_count > second.stargazers_count) return -1
+      if (first.name.toUpperCase() < second.name.toUpperCase()) return - 1
+      if (first.name.toUpperCase() > second.name.toUpperCase()) return 1
+    }
+    );
+    setTopRepositories(getTopRepositories);
+  }, [itemsApi]);
+
+
+
+  if (topRepositories === null) return null;
+
+
   return (
     <Container>
       <Content>
         <Ul>
-          {itemsApi.map(item => (
+          <strong>Client-Side Rendering</strong>
+          {topRepositories.map(item => (
             <Li key={item.id}>
               <TitleProject>{item.name.toUpperCase()}</TitleProject>
 
