@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <div className="container">
           <button className="accent"
-            onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_dark_theme', !isDarkTheme); }}>
+            onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_dark_theme', !isDarkTheme); setTimeout(() => {setIsbuttonOn(false) }, 4250); }}>
             {isDarkTheme ? <CgSun size={25} /> : <HiMoon size={25} />}
           </button>
         </div >
