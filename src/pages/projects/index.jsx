@@ -1,4 +1,4 @@
-import { Container, Content, Ul, Li, TitleProject, Url, Created_at, Updated_at, Language, Description, Stargazers_count } from '../../../styles/projectsStyle'
+import { Container, Content, Ul, Li, TitleProject, Url, Created_at, Updated_at, Language, Description, Stargazers_count, Badges } from '../../../styles/projectsStyle'
 import { FaRegStar } from 'react-icons/fa'
 import React, { useEffect, useState } from "react";
 
@@ -40,6 +40,10 @@ export default function Projects(props) {
                 <Description>Descrição:   {item.description} </Description>
               }
               <Url>URL: <a href={item.html_url} target='_blank' rel="noreferrer" >{item.html_url}</a></Url>
+              {item.topics.length > 0 && 
+              <Badges>{item.topics.map((topic) => (
+										<li key={topic}>{topic}</li>
+									))}</Badges> }
               <Created_at>Data de Criação: {Intl.DateTimeFormat('pt-BR')
                 .format(new Date(item.created_at))}
               </Created_at>

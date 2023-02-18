@@ -69,6 +69,25 @@ a:visited
 transition: 0.25s;
 `;
 
+export const Badges = styled.ul`
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	li {
+		font-weight: 500;
+		font-size: 0.9rem;
+		border-radius: 20px;
+		padding: 10px 15px;
+		white-space: nowrap;
+	  list-style: none;
+    background-color: ${({ theme }) => theme.topics};
+	  color: ${({ theme }) => theme.text};
+    @media (max-width: 760px) {
+      font-size: 0.7rem;
+     }
+	}
+`
+
 export const Created_at = styled.span``;
 
 export const Updated_at = styled.span``;
