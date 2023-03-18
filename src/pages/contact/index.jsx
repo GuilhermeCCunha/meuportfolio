@@ -17,7 +17,7 @@ export default function Contact() {
       <Links>
         <ItemContact 
           IconFa={FaGithubSquare} 
-          LinkContact="https://github.com/GuilhermeCCunha"   
+          LinkContact={`https://github.com/${process.env.userName}`}   
         />
       </Links>
 

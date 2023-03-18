@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 
 export async function getServerSideProps() { // SSR
-  const itemsApi = await fetch('https://api.github.com/users/GuilhermeCCunha/repos').then(res => res.json());
+  const itemsApi = await fetch(`https://api.github.com/users/${process.env.userName}/repos`).then(res => res.json());
   return {
     props: { itemsApi }
   }

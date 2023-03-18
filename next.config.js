@@ -4,7 +4,10 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     styledComponents: true
-  }
+  },
+  env: {
+    userName: 'GuilhermeCCunha', //GitHub
+  },
   
 }
 
