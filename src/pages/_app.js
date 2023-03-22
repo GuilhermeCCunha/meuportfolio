@@ -4,8 +4,7 @@ import React, { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { lightTheme, darkTheme } from '../../styles/theme'
 import GlobalStyles from '../../styles/globalStyles'
-import { CgSun } from "react-icons/cg";
-import { HiMoon } from "react-icons/hi";
+import ThemeButton from '../../components/ThemeButton'
 
 
 
@@ -45,23 +44,17 @@ function MyApp({ Component, pageProps }) {
           <title>Guilherme | dev</title>
         </Head>
         <Header />
-        <div className="container">
-          <button className="accent"
-            onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_dark_theme', !isDarkTheme); setTimeout(() => {setIsbuttonOn(false) }, 4250); }}>
-            {isDarkTheme ? <CgSun size={25} /> : <HiMoon size={25} />}
-          </button>
-        </div >
-        {isbuttonOn ?
+        <ThemeButton isDarkTheme={isDarkTheme}
+          onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_dark_theme', !isDarkTheme); setTimeout(() => { setIsbuttonOn(false) }, 4250); }}>
+        </ThemeButton>
+        {isbuttonOn &&
           <style jsx global>{`
             * {
                 -webkit-transition: 0.25s;
                 transition: 0.25s;
                 -moz-transition: 4.25s;  
               }
-          `}</style> : <style jsx global>{`
-          * {
-          }    
-        `  }</style>}
+          `}</style>}
         <Component {...pageProps} />
       </ThemeProvider>
 
