@@ -44,9 +44,11 @@ function MyApp({ Component, pageProps }) {
           <title>Guilherme | dev</title>
         </Head>
         <Header />
-        <ThemeButton isDarkTheme={isDarkTheme}
-          onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_dark_theme', !isDarkTheme); setTimeout(() => { setIsbuttonOn(false) }, 4250); }}>
-        </ThemeButton>
+        <div className="container">
+          <ThemeButton isDarkTheme={isDarkTheme}
+            onClick={() => { setIsbuttonOn(true); setIsDarkTheme(!isDarkTheme); armazenar('ls_dark_theme', !isDarkTheme); setTimeout(() => { setIsbuttonOn(false) }, 4250); }}>
+          </ThemeButton>
+        </div>
         {isbuttonOn &&
           <style jsx global>{`
             * {
