@@ -65,7 +65,13 @@ a:link { color: inherit;
   }
 a:visited
    { color:inherit; }
-&:hover { transform: scale(1.020); }
+`;
+
+export const HoverUrl = styled.span`
+display: inline-block;
+&:hover { 
+  transform: scale(1.020); 
+}
 transition: 0.25s;
 `;
 
