@@ -9,7 +9,7 @@ export default function ProjectsCSR() {
     let abortController = new AbortController();
 
     function getGitHubAPI() {
-      fetch(`https://api.github.com/users/${process.env.userName}/repos`)
+      fetch(`https://api.github.com/users/${process.env.userName}/repos?per_page=35`)
         .then(async res => {
           if (!res.ok) {
             throw new Error(res.status)
