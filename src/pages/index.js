@@ -9,7 +9,7 @@ export default function Home() {
       <Content>
         <Infos>
           <Name>Olá, sou Guilherme Cunha</Name>
-          <Function>  Developer</Function>
+          <Function>Web Developer</Function>
           <Intro>Graduado em Sistemas de Informação pela UFF.
           </Intro>
           <Link href="projects">
