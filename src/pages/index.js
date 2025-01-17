@@ -12,7 +12,7 @@ export default function Home() {
           <Function>Web Developer</Function>
           <Intro>Graduado em Sistemas de Informação pela UFF.
           </Intro>
-          <Link href="projects">
+          <Link href="projects" legacyBehavior={true}>
             <LinkProjects>PROJETOS <FaArrowRight /></LinkProjects>
           </Link>
         </Infos>

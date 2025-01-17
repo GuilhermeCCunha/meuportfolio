@@ -30,16 +30,16 @@ export default function Header() {
         </Menu>
         <NavLinks sidebar={sidebar}>
           <CloseSidebar onClick={showSiderbar}><FaTimes /></CloseSidebar>
-          <Link href="/">
+          <Link href="/" legacyBehavior={true}>
             <Ancora className={activeLink('')} onClick={showSiderbar}>Home</Ancora>
           </Link>
-          <Link href="projects">
+          <Link href="projects" legacyBehavior={true}>
             <Ancora className={activeLink('projects')} onClick={showSiderbar}>Projetos</Ancora>
           </Link>
-          <Link href="contact">
+          <Link href="contact" legacyBehavior={true}>
             <Ancora className={activeLink('contact')} onClick={showSiderbar}>Contato</Ancora>
           </Link>
-          <Link href="about">
+          <Link href="about" legacyBehavior={true}>
             <Ancora className={activeLink('about')} onClick={showSiderbar}>Sobre</Ancora>
           </Link>
         </NavLinks>
