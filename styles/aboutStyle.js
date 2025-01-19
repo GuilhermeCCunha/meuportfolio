@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: calc(95vh - 95px);                    
-  @media (max-height: 500px) { /* evita que o texto invada o cabeçalho*/
+  @media (max-height: 500px) { //evita que o texto invada o cabeçalho
     height: auto;
   }
 `;
@@ -56,10 +56,10 @@ export const Nextlogo = styled.div`
   width: 31%;
   align-items: end;
   justify-content: end;
-  aspect-ratio: 1/1;/**/
+  aspect-ratio: 1/1;
     border-radius: 2rem;
     display: grid;
-    place-items: end;/**/
+    place-items: end;
     @media (max-width: 600px) {
    
       height: calc(25vh - 25px);

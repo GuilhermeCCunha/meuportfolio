@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: calc(100vh - 100px);
-  @media (max-height: 340px) { /* evita que o texto invada o cabeçalho*/
+  @media (max-height: 340px) { //evita que o texto invada o cabeçalho
     height: auto;
   }
 `;
@@ -73,16 +73,16 @@ export const Logo = styled.div`
   width: 31%;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 1/1;/**/
+  aspect-ratio: 1/1;
     border-radius: 2rem;
     background: linear-gradient(to right, #205E9B, #0575E6, #021B79);
     display: grid;
-    place-items: center;/**/
+    place-items: center;
   img {
     width: 20rem;
     height: 20rem;
   }
-  @media (max-width: 1200px) {/*novo media query*/
+  @media (max-width: 1200px) {//novo media query
     width: 35%;
     img {
       width: 18rem;
@@ -110,7 +110,7 @@ export const Logo = styled.div`
 
 export const Img = styled.img`
   width: 50%;
-  border-radius: 2rem; /*modificado*/
+  border-radius: 2rem; //modificado
   justify-self: center;
   align-self: center;
   overflow: hidden;
@@ -118,9 +118,9 @@ export const Img = styled.img`
   transform-style: preserve-3d;
   perspective: 1000px;
   transition: .6s ease-out;
-  filter: drop-shadow(12px 12px 10px rgba(0,0,0,.6));/*modificado*/
-  &:hover {/*assim*/
+  filter: drop-shadow(12px 12px 10px rgba(0,0,0,.6));//modificado
+  &:hover {//assim
     transform: rotate(0);
     filter: none;
-  }/*que usa o hover*/
+  }//que usa o hover
 `;

@@ -9,16 +9,16 @@ export default  createGlobalStyle`
         //-webkit-transition: 0.25s;
         //transition: 0.25s;
         //-moz-transition: 4.25s; 
-         /* efeito bonito de transição não apagar  0.25s parece bom*/
+        //efeito bonito de transição não apagar  0.25s parece bom
     } 
     .container {
         margin: auto;
         width: 50%;        
-        /*padding: 10px;*/
+        //padding: 10px;
         text-align: center;       
     }
     body {
-        /*overflow-y: hidden;*/
+        //overflow-y: hidden;
         background: ${(props) => props.theme.background};
         color: ${props => props.theme.text};
         text-align: -webkit-center;        
